@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
-const url = "mongodb://rajnikant:rajni123@ds243212.mlab.com:43212/medicine_db";
+const url = dbConfig.url;
 mongoose
   .connect(url)
   .then(() => console.log("Successfully connected to database"))
