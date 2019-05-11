@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
-const url = dbConfig.localUrl;
+const url = dbConfig.url;
 mongoose
   .connect(url)
   .then(() => console.log("Successfully connected to database"))

@@ -221,4 +221,22 @@ router.delete("/medicines/delete", (req, res) => {
     .catch(err => res.json({ message: err.message }));
 });
 
+router.put("/medicines", (req, res) => {
+  console.log(req.body);
+  Medicine.update(
+    {
+      _id: req.body._id
+    },
+    {
+      medicineName: req.body.medicineName,
+      manufacturerName: req.body.manufacturerName,
+      medicineType: req.body.medicineType
+    }
+  )
+    .then(result => {
+      res.json({ message: "success" });
+    })
+    .catch(err => console.log(err));
+});
+
 module.exports = router;
