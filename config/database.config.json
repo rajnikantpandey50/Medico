@@ -1,0 +1,4 @@
+{
+  "url": "mongodb://rajnikant:rajni123@ds231643.mlab.com:31643/prod_medicine_db",
+  "localUrl": "mongodb://localhost:27017/prod_medicine_db"
+}
