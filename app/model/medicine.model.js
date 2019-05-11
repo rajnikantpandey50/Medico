@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 
+const QuantSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  expiryDate: Date,
+  pack: Number,
+  piece: Number
+});
+
 const MedSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   medicineName: String,
@@ -8,10 +15,11 @@ const MedSchema = mongoose.Schema({
   supplier: String,
   price: Number,
   mrp: Number,
-  quantity: Number,
+  quantity: [QuantSchema],
+  totalQuantity: Number,
   piecePerPack: Number,
-  expiryDate: [],
-  purchaseDate: Date
+  purchaseDate: Date,
+  totalSold: Number
 });
 
 module.exports = mongoose.model("Medicine", MedSchema);
